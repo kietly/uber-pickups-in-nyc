@@ -24,4 +24,12 @@ import plotly.graph_objects as go
 @anvil.server.callable
 def get_uber_data():
   df = pd.read_csv(data_files['uber-raw-data-sep14.csv'], nrows=10000)
-  print(df.head())
+  df['Date/Time'] = pd.to_datetime(df['Date/Time'])
+  return df
+
+DATA = get_uber_data()
+
+@anvil.server.callable
+def create_histogram():
+  histogram = np.histogram(DATA['Date/Time'], dt.hour, bins=24)[0]
+  return histogram
