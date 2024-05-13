@@ -31,5 +31,5 @@ DATA = get_uber_data()
 
 @anvil.server.callable
 def create_histogram():
-  histogram = np.histogram(DATA['Date/Time'], dt.hour, bins=24)[0]
+  histogram = np.histogram(DATA['Date/Time'].dt.hour, bins=24)[0]
   return histogram

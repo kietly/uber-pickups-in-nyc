@@ -14,3 +14,5 @@ class Form1(Form1Template):
 
     # Any code you write here will run before the form opens.
     anvil.server.call("get_uber_data")
+
+    self.bar_chart.data = go.Bar(y=anvil.server.call('create_histogram'))
