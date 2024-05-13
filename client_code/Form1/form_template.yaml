@@ -7,4 +7,32 @@ components:
   properties: {col_widths: '{}'}
   name: column_panel_1
   layout_properties: {slot: default}
-  components: []
+  components:
+  - name: label_1
+    properties: {text: Uber Pickups in NYC, role: headline}
+    type: Label
+    layout_properties: {grid_position: 'EQPKLJ,XFVPAW'}
+  - name: label_2
+    properties: {text: Niumber of pickups per hour, role: title}
+    type: Label
+    layout_properties: {grid_position: 'CNFNAT,CZAJUY TUIMMD,GJSQDW'}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'CNFNAT,CZAJUY MDSZRR,QMWDCP'}
+  - name: bar_chart
+    properties: {height: 482.26953125}
+    type: Plot
+    layout_properties: {grid_position: 'CNFNAT,CZAJUY KBZLFL,IVTWSC'}
+  - name: hour_dropdown
+    properties: {}
+    type: DropDown
+    layout_properties: {grid_position: 'CNFNAT,BRYLBS SNTKMW,IELAPK'}
+  - name: mapbox_title
+    properties: {role: title}
+    type: Label
+    layout_properties: {grid_position: 'CNFNAT,BRYLBS GUGRSL,XIQMZA'}
+  - name: mapbox_map
+    properties: {height: 479.0625}
+    type: Plot
+    layout_properties: {grid_position: 'CNFNAT,BRYLBS IOMGZP,QLZNGA'}
