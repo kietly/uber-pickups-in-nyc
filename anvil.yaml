@@ -1,16 +1,34 @@
-allow_embedding: false
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {file_table: files}
 package_name: Uber_Pickups_in_NYC
+allow_embedding: false
 name: Uber Pickups in NYC
-startup_form: Form1
-native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap"
-    rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
 runtime_options:
   version: 2
   client_version: '3'
   server_version: python3-sandbox
   server_spec: {base: python310-minimal}
 metadata: {title: Uber Pickups in NYC, description: DS tutorials}
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
+startup_form: Form1
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap"
+    rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+db_schema:
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: file
+      admin_ui: {order: 1, width: 200}
+      type: media
+    - name: file_version
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: Files
