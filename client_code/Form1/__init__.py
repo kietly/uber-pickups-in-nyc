@@ -13,6 +13,8 @@ class Form1(Form1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    anvil.server.call("get_uber_data")
-
+    #anvil.server.call("get_uber_data")
+    Plot.templates.default = 'rally'
     self.bar_chart.data = go.Bar(y=anvil.server.call('create_histogram'))
+
+  
